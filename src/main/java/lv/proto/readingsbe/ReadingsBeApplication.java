@@ -17,7 +17,8 @@ public class ReadingsBeApplication {
     @Bean
     public CommandLineRunner demo(PartnerRepository repository) {
         return (args) -> {
-            repository.save(new Partner("ag", Boolean.FALSE, "sadasdg", "asdgsad", "asdsadg", null));
+            repository.save(new Partner("John Smith", Boolean.FALSE, "010290-12345", "john.smith@gmail.com", "+37112345678", null));
+            repository.save(new Partner("Maria Smith", Boolean.FALSE, "201188-12345", "maria.smith@outlook.com", "+37187654321", null));
         };
     }
 }
