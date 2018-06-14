@@ -18,7 +18,7 @@ import java.util.Collection;
 @AllArgsConstructor
 @Entity
 @Table(name = "object")
-public class Object {
+public class ObjectDO {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -38,7 +38,7 @@ public class Object {
     @Column
     private String postalCode;
     @OneToMany(mappedBy = "object")
-    private Collection<Contract> contracts;
+    private Collection<ContractDO> contracts;
     @OneToMany(mappedBy = "object")
-    private Collection<Meter> meters;
+    private Collection<MeterDO> meters;
 }

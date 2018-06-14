@@ -11,27 +11,32 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import java.time.LocalDateTime;
+import java.util.Collection;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "contract")
-public class Contract {
+@Table(name = "meter")
+public class MeterDO {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     @Column
-    private LocalDateTime startDate;
+    private String type;
     @Column
-    private LocalDateTime endDate;
-    @ManyToOne
-    @JoinColumn(name = "partner_id")
-    private Partner partner;
+    private String serialNumber;
+    @Column
+    private LocalDateTime installDate;
+    @Column
+    private LocalDateTime verificationDate;
     @ManyToOne
     @JoinColumn(name = "object_id")
-    private Object object;
+    private ObjectDO object;
+    @OneToMany(mappedBy = "meter")
+    private Collection<ReadingDO> readings;
 }

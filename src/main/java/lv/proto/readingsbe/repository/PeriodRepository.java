@@ -1,9 +1,9 @@
 package lv.proto.readingsbe.repository;
 
-import lv.proto.readingsbe.entity.PartnerDO;
+import lv.proto.readingsbe.entity.PeriodDO;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface PartnerRepository extends JpaRepository<PartnerDO, Long> {
+public interface PeriodRepository extends JpaRepository<PeriodDO, Long> {
 }

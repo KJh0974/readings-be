@@ -19,7 +19,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Entity
 @Table(name = "reading")
-public class Reading {
+public class ReadingDO {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -30,8 +30,8 @@ public class Reading {
     private Long value;
     @ManyToOne
     @JoinColumn(name = "meter_id")
-    private Meter meter;
+    private MeterDO meter;
     @ManyToOne
     @JoinColumn(name = "period_id")
-    private Period period;
+    private PeriodDO period;
 }

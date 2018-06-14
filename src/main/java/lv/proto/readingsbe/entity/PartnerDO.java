@@ -19,16 +19,7 @@ import java.util.Collection;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "partner")
-public class Partner {
-
-    public Partner(String name, Boolean company, String code, String email, String phone, Collection<Contract> contracts) {
-        this.name = name;
-        this.company = company;
-        this.code = code;
-        this.email = email;
-        this.phone = phone;
-        this.contracts = contracts;
-    }
+public class PartnerDO {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -43,6 +34,6 @@ public class Partner {
     private String email;
     @Column
     private String phone;
-    @OneToMany(mappedBy = "partner", fetch = FetchType.EAGER)
-    private Collection<Contract> contracts;
+    @OneToMany(mappedBy = "partner")
+    private Collection<ContractDO> contracts;
 }

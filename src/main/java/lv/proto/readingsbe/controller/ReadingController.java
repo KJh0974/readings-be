@@ -1,7 +1,7 @@
 package lv.proto.readingsbe.controller;
 
-import lv.proto.readingsbe.model.Partner;
-import lv.proto.readingsbe.service.PartnerService;
+import lv.proto.readingsbe.model.Reading;
+import lv.proto.readingsbe.service.ReadingService;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,19 +10,18 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/partners")
-public class PartnerController {
+@RequestMapping("/readings")
+public class ReadingController {
 
-    private PartnerService partnerService;
+    private ReadingService readingService;
 
-    public PartnerController(PartnerService partnerService) {
-        this.partnerService = partnerService;
+    public ReadingController(ReadingService readingService) {
+        this.readingService = readingService;
     }
 
     @GetMapping
     @CrossOrigin("http://localhost:3000")
-    public List<Partner> getAllPartners() {
-        return partnerService.findAll();
+    public List<Reading> getAllReadings() {
+        return readingService.findAll();
     }
-
 }
