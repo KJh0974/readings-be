@@ -26,4 +26,11 @@ public class PartnerService {
                 .map(p -> modelMapper.map(p, Partner.class))
                 .collect(Collectors.toList());
     }
+
+    @Transactional(readOnly = true)
+    public Partner findById(Long id) {
+        return partnerRepository.findById(id)
+                .map(p -> modelMapper.map(p, Partner.class))
+                .orElse(null);
+    }
 }

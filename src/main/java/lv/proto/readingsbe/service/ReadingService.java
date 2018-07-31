@@ -26,4 +26,11 @@ public class ReadingService {
                 .map(r -> modelMapper.map(r, Reading.class))
                 .collect(Collectors.toList());
     }
+
+    @Transactional(readOnly = true)
+    public Reading findById(Long id) {
+        return readingRepository.findById(id)
+                .map(r -> modelMapper.map(r, Reading.class))
+                .orElse(null);
+    }
 }

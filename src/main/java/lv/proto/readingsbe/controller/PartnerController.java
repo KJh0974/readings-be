@@ -2,10 +2,7 @@ package lv.proto.readingsbe.controller;
 
 import lv.proto.readingsbe.model.Partner;
 import lv.proto.readingsbe.service.PartnerService;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,9 +17,14 @@ public class PartnerController {
     }
 
     @GetMapping
-    @CrossOrigin("http://localhost:3000")
-    public List<Partner> getAllPartners() {
+    @CrossOrigin("http://localhost:4200")
+    public List<Partner> getAll() {
         return partnerService.findAll();
     }
 
+    @GetMapping("/{id}")
+    @CrossOrigin("http://localhost:4200")
+    public Partner getById(@PathVariable("id") Long id) {
+        return partnerService.findById(id);
+    }
 }
