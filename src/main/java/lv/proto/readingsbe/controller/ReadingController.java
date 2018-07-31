@@ -20,7 +20,7 @@ public class ReadingController {
     }
 
     @GetMapping
-    @CrossOrigin("http://localhost:3000")
+    @CrossOrigin("http://localhost:4200")
     public List<Reading> getAllReadings() {
         return readingService.findAll();
     }
