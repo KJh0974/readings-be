@@ -1,5 +1,6 @@
 package lv.proto.readingsbe.service;
 
+import lv.proto.readingsbe.entity.ObjectDO;
 import lv.proto.readingsbe.model.Object;
 import lv.proto.readingsbe.repository.ObjectRepository;
 import org.modelmapper.ModelMapper;
@@ -32,5 +33,10 @@ public class ObjectService {
         return objectRepository.findById(id)
                 .map(c -> modelMapper.map(c, Object.class))
                 .orElse(null);
+    }
+
+    public Object add(ObjectDO objectDO) {
+        final ObjectDO object = objectRepository.save(objectDO);
+        return modelMapper.map(object, Object.class);
     }
 }

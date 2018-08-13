@@ -10,7 +10,7 @@ Deploy postgres database in docker
 ---
 
 1. Start docker
-1. Deploy postgres database: `docker run --name postgres-db -p 32768:5432 -e POSTGRES_PASSWORD=postgres -d postgres:latest`
+1. Deploy postgres database: `docker run --name postgres-db -p 32771:5432 -e POSTGRES_PASSWORD=postgres -d postgres:latest`
 1. Update application properties and specify postgres IP, port and password (i.e. on docker toolbox Ip by default should be 192.168.99.100)
 
 Run application locally

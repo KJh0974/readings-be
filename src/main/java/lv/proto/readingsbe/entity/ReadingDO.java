@@ -34,4 +34,9 @@ public class ReadingDO {
     @ManyToOne
     @JoinColumn(name = "period_id")
     private PeriodDO period;
+
+    @Column(name="meter_id", insertable = false, updatable = false)
+    private Long meterId;
+    @Column(name="period_id", insertable = false, updatable = false)
+    private Long periodId;
 }
