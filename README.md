@@ -16,7 +16,7 @@ Deploy postgres database in docker
 Run application locally
 ---
 
-1. To run application locally, run main method from  `ReadingsBeApplication.java` or from command line `gradlew build && java -jar build/libs/readings-be-0.0.1-SNAPSHOT.jar`
+1. To run application locally, run main method from  `ReadingsBeApplication.java` or from command line `gradlew build ramltojaxrs && java -jar build/libs/readings-be-0.0.1-SNAPSHOT.jar`
 
 Run application in docker
 ---

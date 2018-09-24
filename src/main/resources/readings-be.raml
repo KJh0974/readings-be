@@ -1,0 +1,22 @@
+#%RAML 1.0
+---
+  title: Readings back-end API
+  version: 0.1
+  baseUri: http://example.com/{version}
+
+  types:
+    reading:
+      properties:
+        id: integer
+        date: datetime
+        value: integer
+
+  /readings:
+    description: Gets all readings
+    get:
+      responses:
+        200:
+          body:
+            application/json:
+              type: array
+              items: reading
