@@ -2,7 +2,10 @@ package lv.proto.readingsbe.controller;
 
 import lv.proto.readingsbe.model.Period;
 import lv.proto.readingsbe.service.PeriodService;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -17,13 +20,11 @@ public class PeriodController {
     }
 
     @GetMapping
-    @CrossOrigin("http://localhost:4200")
     public List<Period> getAll() {
         return periodService.findAll();
     }
 
     @GetMapping("/{id}")
-    @CrossOrigin("http://localhost:4200")
     public Period getById(@PathVariable("id") Long id) {
         return periodService.findPeriod(id);
     }
